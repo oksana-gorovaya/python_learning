@@ -5,22 +5,26 @@ s = 'aaaabbсaa' преобразуется в 'a4b2с1a2', то есть гру
 Напишите программу, которая считывает строку, кодирует её предложенным алгоритмом и выводит закодированную
 последовательность на стандартный вывод. Кодирование должно учитывать регистр символов."""
 
-DNA_sample = input().lower()
+DNA_sample = input()
 DNA_coded = ''
-arr = list(DNA_sample)
 temp_str = ''
+arr = list(DNA_sample)
+counter = 0
 
-index = 0
 for item in arr:
-    if arr[index] != arr[index - 1]:
+    if counter == 0:
+        temp_str += f"{item}"
+        counter += 1
+        continue
+
+    if arr[counter] != arr[counter - 1]:
         temp_str += f",{item}"
+
     else:
         temp_str += f"{item}"
-    index += 1
+    counter += 1
 
 temp_array = temp_str.split(',')
-
 for element in temp_array:
     DNA_coded += f"{element[:1]}{len(element)}"
-
 print(DNA_coded)
