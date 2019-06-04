@@ -10,22 +10,26 @@ user_input = input().split(" ")
 user_output = ""
 counter = 0
 
-if len(user_input) == 1:
-    user_output += str(user_input[0])
 
-else:
-    for item in user_input:
-        neighbours_sum = 0
-        if counter == 0:
-            neighbours_sum = int(user_input[1]) + int(user_input[-1])
+def show_neighbours_sum(user_input, user_output, counter):
+    if len(user_input) == 1:
+        user_output += str(user_input[0])
 
-        elif counter == (len(user_input) - 1):
-            neighbours_sum = int(user_input[-2]) + int(user_input[0])
+    else:
+        for item in user_input:
+            neighbours_sum = 0
+            if counter == 0:
+                neighbours_sum = int(user_input[1]) + int(user_input[-1])
 
-        else:
-            neighbours_sum = int(user_input[counter + 1]) + int(user_input[counter - 1])
+            elif counter == (len(user_input) - 1):
+                neighbours_sum = int(user_input[-2]) + int(user_input[0])
 
-        user_output += str(neighbours_sum) + " "
-        counter += 1
+            else:
+                neighbours_sum = int(user_input[counter + 1]) + int(user_input[counter - 1])
 
-print(user_output)
+            user_output += str(neighbours_sum) + " "
+            counter += 1
+    return user_output
+
+
+print(show_neighbours_sum(user_input, user_output, counter))

@@ -5,7 +5,12 @@
 user_input = input().split()
 input_sum = 0
 
-for item in user_input:
-    input_sum += int(item)
 
-print(input_sum)
+def show_sum(user_input, input_sum):
+    for item in user_input:
+        input_sum += int(item)
+
+    return input_sum
+
+
+print(show_sum(user_input, input_sum))

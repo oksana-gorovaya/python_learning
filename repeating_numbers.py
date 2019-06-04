@@ -7,10 +7,14 @@
 user_input = input().split(" ")
 user_output = ""
 
-for item in user_input:
-    if (user_input.count(item) > 1) and (item not in user_output.split(" ")):
-        user_output += f"{item} "
-    else:
-        continue
 
-print(user_output)
+def show_repeating_numbers(user_input, user_output):
+    for item in user_input:
+        if (user_input.count(item) > 1) and (item not in user_output.split(" ")):
+            user_output += f"{item} "
+        else:
+            continue
+    return user_output
+
+
+print(show_repeating_numbers(user_input, user_output))
