@@ -21,7 +21,7 @@ def remove_odd(temp_list):
     return lst
 
 
-def insert_devided(lst):
+def divide_by_half(lst):
     counter = 0
     for item in lst:
         lst[counter] = item // 2
@@ -32,7 +32,7 @@ def insert_devided(lst):
 def modify_list(lst):
     odd_numbers = find_odd(lst)
     filtered_list = remove_odd(odd_numbers)
-    insert_devided(filtered_list)
+    divide_by_half(filtered_list)
 
 
 lst = [3, 2, 5, 5, -6, 0]
