@@ -6,25 +6,36 @@ s = 'aaaabbсaa' преобразуется в 'a4b2с1a2', то есть гру
 последовательность на стандартный вывод. Кодирование должно учитывать регистр символов."""
 
 DNA_sample = input()
-DNA_coded = ''
 temp_str = ''
-arr = list(DNA_sample)
-counter = 0
 
-for item in arr:
-    if counter == 0:
-        temp_str += f"{item}"
+
+def group_elements(DNA_sample, temp_str):
+    arr = list(DNA_sample)
+    counter = 0
+    for item in arr:
+        if counter == 0:
+            temp_str += f"{item}"
+            counter += 1
+            continue
+
+        if arr[counter] != arr[counter - 1]:
+            temp_str += f",{item}"
+
+        else:
+            temp_str += f"{item}"
         counter += 1
-        continue
+    return temp_str
 
-    if arr[counter] != arr[counter - 1]:
-        temp_str += f",{item}"
 
-    else:
-        temp_str += f"{item}"
-    counter += 1
+result = group_elements(DNA_sample, temp_str)
 
-temp_array = temp_str.split(',')
-for element in temp_array:
-    DNA_coded += f"{element[:1]}{len(element)}"
-print(DNA_coded)
+
+def count_duplicates(result):
+    dna_coded = ''
+    temp_array = result.split(',')
+    for element in temp_array:
+        dna_coded += f"{element[:1]}{len(element)}"
+    return dna_coded
+
+
+print(count_duplicates(result))

@@ -8,14 +8,19 @@
 
 first_number = int(input())
 second_number = int(input())
-amount = 0
-numbers_sum = 0
 
-for i in range(first_number, second_number + 1):
-    if i % 3 == 0:
-        numbers_sum += i
-        amount += 1
-    continue
 
-print(numbers_sum / amount)
+def calculate_average(first_number, second_number):
+    counter = 0
+    numbers_sum = 0
+    for i in range(first_number, second_number + 1):
+        if i % 3 == 0:
+            numbers_sum += i
+            counter += 1
+        continue
+
+    return numbers_sum / counter
+
+
+print(calculate_average(first_number, second_number))
 
