@@ -11,19 +11,34 @@ a = int(input())
 b = int(input())
 c = int(input())
 d = int(input())
+args = [a, b, c, d]
 
-range_string = ''
-string_to_fill = ''
 
-for f in range(c, d + 1):
-    range_string += '\t' + str(f)
+def build_header():
+    range_string = ''
+    for f in range(c, d + 1):
+        range_string += '\t' + str(f)
+    return range_string
 
-print(range_string)
 
-for i in range(a, b + 1):
-    for j in range(c, d + 1):
-        string_to_fill += str(j * i) + '\t'
-    print(f'{i} \t {string_to_fill}')
+for item in args:
+    if (item == 0) or (item >= 10):
+        raise Exception("Enter integers from 0 to 9")
+    elif (a > b) or (c > d):
+        raise Exception("Use the following format: a<=b, c<=d")
+
+print(build_header())
+
+
+def build_table():
     string_to_fill = ''
+    result = ''
+    for i in range(a, b + 1):
+        for j in range(c, d + 1):
+            string_to_fill += str(j * i) + '\t'
+        result += f'{i}\t{string_to_fill}\n'
+        string_to_fill = ''
+    return result
 
 
+print(build_table())
