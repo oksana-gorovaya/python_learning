@@ -7,17 +7,17 @@
 Вывод должен содержать одну строку с числами нового списка, разделёнными пробелом."""
 
 user_input = input().split(" ")
-user_output = ""
-counter = 0
 
 
-def show_neighbours_sum(user_input, user_output, counter):
+def show_neighbours_sum(user_input):
+    user_output = ""
+    counter = 0
+
     if len(user_input) == 1:
         user_output += str(user_input[0])
 
     else:
         for item in user_input:
-            neighbours_sum = 0
             if counter == 0:
                 neighbours_sum = int(user_input[1]) + int(user_input[-1])
 
@@ -32,4 +32,4 @@ def show_neighbours_sum(user_input, user_output, counter):
     return user_output
 
 
-print(show_neighbours_sum(user_input, user_output, counter))
+print(show_neighbours_sum(user_input))
