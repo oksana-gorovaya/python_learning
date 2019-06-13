@@ -21,7 +21,7 @@ def create_match_table_template(initial_table):
 
     for item in initial_table:
         for element in item.split(';'):
-            if re.match("[а-яА-Я]", element):
+            if re.match('[a-zA-z\u00C0-\u02AF\u0388-\u04FF]', element):
                 games_dictionary[element] = {'games_played': 0, 'won': 0, 'drawn': 0, 'lost': 0, 'points': 0}
 
     return games_dictionary
@@ -35,7 +35,7 @@ def preprocess_table_data(initial_table):
         keys_array = []
         values_array = []
         for element in item:
-            if re.match("[а-яА-Я]", element):
+            if re.match("[a-zA-z\u00C0-\u02AF\u0388-\u04FF]", element):
                 keys_array.append(element)
             else:
                 values_array.append(element)
