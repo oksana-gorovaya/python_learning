@@ -25,17 +25,8 @@ string_to_decrypt = input()
 
 
 def to_dictionary(initial_letters, encrypting_letters):
-    initial_letters_splitted = []
-    encrypting_letters_splitted = []
-    for item in initial_letters:
-        initial_letters_splitted.append(item)
 
-    for item in encrypting_letters:
-        encrypting_letters_splitted.append(item)
-
-    reference_dictionary = dict(zip(initial_letters_splitted, encrypting_letters_splitted))
-
-    return reference_dictionary
+    return dict(zip(list(initial_letters), list(encrypting_letters)))
 
 
 def encrypt_string(cipher_key, string_to_encrypt):
