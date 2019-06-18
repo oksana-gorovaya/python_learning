@@ -10,7 +10,7 @@
 import re
 games_total = int(input())
 initial_table = []
-
+pattern = '[a-zA-z\u00C0-\u02AF\u0388-\u04FF]'
 while len(initial_table) < games_total:
     another_game = input()
     initial_table.append(another_game)
@@ -21,9 +21,8 @@ def create_match_table_template(initial_table):
 
     for item in initial_table:
         for element in item.split(';'):
-            if re.match('[a-zA-z\u00C0-\u02AF\u0388-\u04FF]', element):
+            if re.match(pattern, element):
                 games_dictionary[element] = {'games_played': 0, 'won': 0, 'drawn': 0, 'lost': 0, 'points': 0}
-
     return games_dictionary
 
 
@@ -35,7 +34,7 @@ def preprocess_table_data(initial_table):
         keys_array = []
         values_array = []
         for element in item:
-            if re.match("[a-zA-z\u00C0-\u02AF\u0388-\u04FF]", element):
+            if re.match(pattern, element):
                 keys_array.append(element)
             else:
                 values_array.append(element)
@@ -44,7 +43,6 @@ def preprocess_table_data(initial_table):
 
 
 def update_match_table(temp_dictionary, keys_array, values_array):
-
     for key, value in temp_dictionary.items():
         match_table[key]['games_played'] += 1
 
