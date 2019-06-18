@@ -12,8 +12,9 @@
 
 print('First;Second-1 Second-2;Third'.split(';'))
 # ['First', 'Second-1 Second-2', 'Third']"""
-input_file = '/home/xenia/Завантаження/dataset_3363_4 (5).txt'
-output_file = '/home/xenia/PhpstormProjects/reply.py'
+input_file = input('Path to dataset file:')
+output_file = input('Path to output file:')
+
 
 def separate_students(input_data):
     students_list = []

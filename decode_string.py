@@ -6,7 +6,7 @@ L4V7H18O20a9m20R18Q2h12x9P12l15o19B3H17f15q17o10N11U11S13f10q6Q17W14U4p16w3S6M2A
 import re
 
 
-with open('/home/xenia/Завантаження/dataset_3363_2.txt', 'r') as encoded_file:
+with open(input('Path to dataset file:'), 'r') as encoded_file:
     encoded_string = encoded_file.readline().strip()
 
 
@@ -51,5 +51,5 @@ splited_input = split_input(encoded_string, pattern)
 restored_blocks = restore_letter_blocks(splited_input, pattern)
 initial_string = decode_final_string(restored_blocks)
 
-with open('/home/xenia/Документи/decoded_file.py', 'w') as decoded_file:
+with open(input('Path to output file:'), 'w') as decoded_file:
     decoded_file.write(initial_string)

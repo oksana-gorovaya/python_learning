@@ -5,10 +5,11 @@
 лексикографически первое (можно использовать оператор < для строк).
 В качестве ответа укажите вывод программы, а не саму программу.
 Слова, написанные в разных регистрах, считаются одинаковыми.
+
 abc a bCd bC AbC BC BCD bcd ABC
 
 """
-with open('/home/xenia/Завантаження/dataset_3363_3 (1).txt', 'r') as dataset_file:
+with open(input('Path to dataset file:'), 'r') as dataset_file:
     text = dataset_file.read().strip().lower().split(' ')
 
 
@@ -47,5 +48,5 @@ frequent_word = find_most_frequent_word(biggest_number_of_occurrences, words_sta
 output = build_output(frequent_word, biggest_number_of_occurrences)
 
 
-with open('/home/xenia/Документи/reply.py', 'w') as result_file:
+with open(input('Path to output file:'), 'w') as result_file:
     result_file.write(output)
