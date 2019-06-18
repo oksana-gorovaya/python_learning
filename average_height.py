@@ -10,7 +10,7 @@
  Если про какой-то класс нет информации, необходимо вывести напротив него прочерк"""
 import re
 
-with open('/home/xenia/Завантаження/dataset_3380_5 (2).txt', 'r') as student_file:
+with open(input('Path to dataset file: '), 'r') as student_file:
     student_list = student_file.readlines()
 
 
@@ -78,5 +78,5 @@ student_height_list = get_height(student_list)
 output = fill_template(output_template, student_height_list)
 formatted_output = format_output(output)
 
-with open('/home/xenia/PhpstormProjects/students_height.py', 'w') as output_file:
+with open(input('Path to output file: '), 'w') as output_file:
     output_file.write(formatted_output)
