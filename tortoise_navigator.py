@@ -65,7 +65,7 @@ def get_directions(preprocessed_instructions):
             elif key == 'восток':
                 route['x'] += int(value)
             else:
-                raise Exception('This tortoise supports Russian instructions only')
+                raise Exception('This tortoise does not support this type of instruction.')
 
     return route
 
