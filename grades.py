@@ -12,8 +12,8 @@
 
 print('First;Second-1 Second-2;Third'.split(';'))
 # ['First', 'Second-1 Second-2', 'Third']"""
-input_file = input('Path to dataset file:')
-output_file = input('Path to output file:')
+input_file = input()
+output_file = input()
 
 
 def separate_students(input_data):
