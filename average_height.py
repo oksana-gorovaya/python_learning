@@ -29,6 +29,10 @@ def get_height(student_list):
         trimmed_list.append(item.strip().split('\t'))
 
     for item in trimmed_list:
+        if len(item) < 3:
+            raise Exception('File format should be: Form(integer)    Family name(string)    Student height(integer)')
+
+    for item in trimmed_list:
         form_number = []
         student_height = []
         for element in item:
