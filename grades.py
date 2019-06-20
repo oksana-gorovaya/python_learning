@@ -61,6 +61,7 @@ def find_average_per_subject(students_grades_list):
 with open(input_file, 'r') as dataset_file:
     input_data = dataset_file.read().strip().split("\n")
 
+
 students_grades_list = separate_students(input_data)
 average_per_student = find_average_grade(students_grades_list)
 average_per_subject = find_average_per_subject(students_grades_list)
