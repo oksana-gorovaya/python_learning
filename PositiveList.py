@@ -13,18 +13,26 @@
 """
 
 
-class PositiveList(list):
-    def append(self, c):
-        if c <= 0:
-            raise NonPositiveError
-        super(PositiveList, self).append(c)
-
-
 class NonPositiveError(Exception):
     pass
 
 
+class NonIntegerError(Exception):
+    pass
+
+
+class PositiveList(list):
+    def append(self, c):
+        if isinstance(c, int):
+            if c <= 0:
+                raise NonPositiveError
+
+            super(PositiveList, self).append(c)
+        else:
+            raise NonIntegerError
+
+
 new_list = PositiveList()
 print(new_list)
-new_list.append(70)
+new_list.append(-7.0)
 print(new_list)
