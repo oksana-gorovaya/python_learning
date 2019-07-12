@@ -34,10 +34,10 @@ def check_requests(requests, errors_relaton):
         if len(flat_errors_lineage) == 2 and request == flat_errors_lineage[first_item] and 'None' == flat_errors_lineage[last_item]:
             # print('nothing needed, continuing...')
             continue
-        else:
-            values_in_request = list(filter(lambda value: value in requests, flat_errors_lineage))
-            if any(requests.index(item) < requests.index(request) for item in values_in_request):
-                print(request)
+
+        values_in_request = list(filter(lambda value: value in requests, flat_errors_lineage))
+        if any(requests.index(item) < requests.index(request) for item in values_in_request):
+            print(request)
 
 
 def find_ancestor(errors_relaton, start, end, path):
